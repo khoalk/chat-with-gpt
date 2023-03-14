@@ -19,5 +19,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Start containers
+    - name: Build containers
       run: docker-compose -f "docker-compose.yml" build
