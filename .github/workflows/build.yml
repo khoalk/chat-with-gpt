@@ -14,3 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: cd server && npm install && npx -y tsc
+  test-docker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Start containers
+      run: docker-compose -f "docker-compose.yml" up -d --build
+    - name: Stop containers
+      run: docker-compose -f "docker-compose.yml" down
